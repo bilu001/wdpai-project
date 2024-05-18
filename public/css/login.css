@@ -1,0 +1,102 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #FFFFFF;
+}
+
+.flex-center-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.login_form{
+    flex-direction: column;
+    width: calc(2em * 40);
+    height: auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+form > p{
+    font-size: 30px;
+    font-family: Jura;
+    font-weight: 800;
+}
+
+.login_email, .login_password{
+    width: calc(100% - 50px);
+    height: auto;
+}
+
+
+
+span{
+    color: #FFFFFF;
+    background-color: #FB090B;
+    padding: 8px 10px;
+    border-radius: 12px;
+    display: inline-flex;
+}
+
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.form_footer {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 50px);
+    gap: 20px;
+}
+
+.form_footer a {
+    text-align: right;
+}
+
+.form_footer button {
+    background-color: #FB090B;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    height: 48px;
+    font-size: 20px;
+    font-family: Jura;
+    font-weight: 700;
+}
+
+.image_container{
+    flex-direction: column;
+    background-color: #555555;
+    height: 100vh
+}
+
+.image_container > img{
+    width: calc(2em * 20);
+}
+
+.header{
+    font-size: 60px;
+    font-family: Jura;
+    color: #FFFFFF;
+}
+
+.motto{
+    font-size: 40px;
+    font-family: Jura;
+    text-align: center;
+    color: #FFFFFF;
+}

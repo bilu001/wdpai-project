@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding:0;
+}
+
+.nav_bar{
+    background-color: #303030;
+    display: flex;
+}
+
+nav > div > img {
+    width: 15em;
+}

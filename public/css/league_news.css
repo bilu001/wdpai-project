@@ -52,83 +52,30 @@ section {
     margin-bottom: 20px;
 }
 
-.player-info {
+.news-article {
     display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
-.player-photo {
-    width: 150px;
-    height: 180px;
-    border-radius: 50%;
-    margin-right: 20px;
-}
-
-.player-details {
-    display: flex;
-    flex-direction: column;
-}
-
-.player-name {
-    font-size: 28px;
-    color: #000000;
-}
-
-.injury-status {
-    background-color: #FB090B;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 50%;
-    width: 30px;
-    height: 30px;
-    font-size: 18px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-h3 {
-    color: #FB090B;
-    border-bottom: 2px solid #FB090B;
-    padding-bottom: 5px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 5px 0;
-}
-
-table {
+.news-image {
     width: 100%;
-    border-collapse: collapse;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-table, th, td {
-    border: 1px solid #EAEAEA;
+.news-article h2 {
+    color: #FB090B;
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #FB090B;
-    color: #FFFFFF;
-}
-
-.contact-button {
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-}
-
-.contact-button img {
-    width: 50px;
-    height: 50px;
+.news-article p {
+    font-size: 16px;
+    color: #000000;
+    text-align: justify;
 }
 
 .footer {
@@ -146,4 +93,15 @@ th {
 .social-media a img {
     width: 30px;
     height: 30px;
+}
+
+.contact-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.contact-button img {
+    width: 50px;
+    height: 50px;
 }

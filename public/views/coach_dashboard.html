@@ -10,16 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
     <title>COACH DASHBOARD</title>
 </head>
+
 <body>
     <div class="wrapper">
         <nav class="nav_bar">
             <div>
-                <img src="public/images/logo.png" alt="Club Logo"/>
+                <img src="public/images/logo.png" alt="Club Logo" />
+            </div>
+            <div class="hamburger-menu" id="hamburgerMenu">
+                <div></div>
+                <div></div>
+                <div></div>
             </div>
             <div class="nav_buttons">
-                <button>Players</button>
+                <button class="active">Players</button>
                 <button>Plan Training</button>
-                <button class="new_player_button">Add a new Player</button>
+                <button class="new_player_button" id="newPlayerButton">Add a new Player</button>
                 <button>Logout</button>
             </div>
         </nav>
@@ -31,15 +37,40 @@
                     <p>Oliver <span>Giroud</span></p>
                     <p>Striker</p>
                     <p>Contract valid until<span>15 July 2025</span></p>
-                    <div class="manage_players"> 
+                    <div class="manage_players">
                         <button>Add Statistics</button>
                         <button>Remove Player</button>
-                    </div>  
-            </div>
+                    </div>
+                </div>
                 <div class="player">Player 2</div>
             </div>
         </main>
     </div>
+
+    <!-- New Player Form Modal -->
+    <div id="newPlayerModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeNewPlayerForm">&times;</span>
+            <h2>Add a New Player</h2>
+            <form id="newPlayerForm">
+                <label for="playerImage">Player Image:</label>
+                <input type="file" id="playerImage" name="playerImage" accept="image/png, image/jpeg" required>
+
+                <label for="playerName">Name:</label>
+                <input type="text" id="playerName" name="playerName" required>
+
+                <label for="playerPosition">Position:</label>
+                <input type="text" id="playerPosition" name="playerPosition" required>
+
+                <label for="contractEndDate">Contract End Date:</label>
+                <input type="date" id="contractEndDate" name="contractEndDate" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="src/scripts/coach_dashboard.js"></script>
 </body>
 
 </html>

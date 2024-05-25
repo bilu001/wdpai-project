@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const closeNewPlayerForm = document.getElementById('closeNewPlayerForm');
     const newPlayerForm = document.getElementById('newPlayerForm');
     const playersGrid = document.getElementById('playersGrid');
+    const hamburgerMenu = document.getElementById('hamburgerMenu');
+    const navButtons = document.querySelector('.nav_buttons');
 
     await loadPlayers();
 
@@ -100,6 +102,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             alert('Error removing player: ' + error.message);
         }
     };
+    hamburgerMenu.addEventListener('click', () => {
+        navButtons.classList.toggle('active');
+    });
+    
+
 });
 
 function logout() {

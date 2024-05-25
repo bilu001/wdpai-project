@@ -105,3 +105,61 @@ section {
     width: 50px;
     height: 50px;
 }
+
+
+
+@media (max-width: 768px) {
+    .nav_buttons {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger-menu div {
+        width: 30px;
+        height: 3px;
+        background-color: #000;
+        margin: 5px 0;
+    }
+
+    .nav_buttons.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+
+    .nav_buttons a {
+        margin: 10px 0;
+    }
+
+    .news-article {
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .news-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer .social-media a {
+        margin: 5px;
+    }
+
+    .contact-button {
+        text-align: center;
+    }
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/public/css/player_dashboard.css">
+    <link rel="stylesheet" href="/public/css/common.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
@@ -13,6 +14,11 @@
     <nav class="nav_bar">
         <div>
             <img src="/public/images/logo.png" alt="Club Logo"/>
+        </div>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            <div></div>
+            <div></div>
+            <div></div>
         </div>
         <div class="nav_buttons">
             <a href="/public/views/player_dashboard.html" class="active">My Profile</a>
@@ -37,6 +43,7 @@
             <img src="/public/images/email-icon.png" alt="Email Icon"/>
         </a>
     </div>
+    <script src="../../src/scripts/hamburger_menu.js"></script>
     <script src="../../src/scripts/player_dashboard.js"></script>
 </body>
 </html>

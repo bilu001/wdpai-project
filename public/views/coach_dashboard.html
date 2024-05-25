@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="public/css/coach_dashboard.css">
+    <link rel="stylesheet" type="text/css" href="/public/css/coach_dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
     <title>COACH DASHBOARD</title>
 </head>
-
 <body>
     <div class="wrapper">
         <nav class="nav_bar">
             <div>
-                <img src="public/images/logo.png" alt="Club Logo" />
+                <img src="/public/images/logo.png" alt="Club Logo" />
             </div>
             <div class="hamburger-menu" id="hamburgerMenu">
                 <div></div>
@@ -26,24 +24,12 @@
                 <button class="active">Players</button>
                 <button>Plan Training</button>
                 <button class="new_player_button" id="newPlayerButton">Add a new Player</button>
-                <button>Logout</button>
+                <button onclick="logout()">Logout</button>
             </div>
         </nav>
         <main class="main_container">
             <p>COACH DASHBOARD</p>
-            <div class="players_grid">
-                <div class="player">
-                    <img src="public/images/giroud.png" alt="player">
-                    <p>Oliver <span>Giroud</span></p>
-                    <p>Striker</p>
-                    <p>Contract valid until<span>15 July 2025</span></p>
-                    <div class="manage_players">
-                        <button>Add Statistics</button>
-                        <button>Remove Player</button>
-                    </div>
-                </div>
-                <div class="player">Player 2</div>
-            </div>
+            <div class="players_grid" id="playersGrid"></div>
         </main>
     </div>
 
@@ -59,6 +45,9 @@
                 <label for="playerName">Name:</label>
                 <input type="text" id="playerName" name="playerName" required>
 
+                <label for="playerSurname">Surname:</label>
+                <input type="text" id="playerSurname" name="playerSurname" required>
+
                 <label for="playerPosition">Position:</label>
                 <input type="text" id="playerPosition" name="playerPosition" required>
 
@@ -70,7 +59,8 @@
         </div>
     </div>
 
-    <script src="src/scripts/coach_dashboard.js"></script>
-</body>
 
+
+    <script src="../../src/scripts/coach_dashboard.js"></script>
+</body>
 </html>

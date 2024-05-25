@@ -42,6 +42,10 @@ services:
       - "5050:80"
     networks:
       - pg-network
+    volumes:
+      - pg-dataad:/var/lib/pgadmin
+      - ./config_local.py:/pgadmin4/config_local.py
+
   
 networks:
   pg-network:

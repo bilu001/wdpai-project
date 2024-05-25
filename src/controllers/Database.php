@@ -1,6 +1,6 @@
 <?php
 class Database {
-    private $host = '172.19.0.3';
+    private $host = '172.19.0.4';
     private $db = 'db';
     private $username = 'docker';
     private $password = 'docker';

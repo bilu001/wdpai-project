@@ -100,3 +100,53 @@ input {
     text-align: center;
     color: #FFFFFF;
 }
+
+
+
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .login_form, .image_container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .login_email, .login_password {
+        flex-direction: column;
+    }
+
+    .login_email input, .login_password input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .form_footer {
+        text-align: center;
+    }
+
+    .image_container {
+        text-align: center;
+    }
+
+    .image_container img {
+        width: 100px;
+        margin-bottom: 10px;
+    }
+
+    .header {
+        font-size: 1.5em;
+    }
+
+    .motto {
+        font-size: 0.9em; 
+    }
+
+    .login_form button {
+        width: 100%; 
+        padding: 10px;
+    }
+}

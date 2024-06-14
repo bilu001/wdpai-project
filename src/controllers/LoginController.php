@@ -49,8 +49,12 @@ class LoginController {
             $updateStmt = $this->db->prepare($updateQuery);
             $updateStmt->bindParam(':username', $username);
             $updateStmt->bindParam(':newPassword', $newPassword);
-            $updateStmt->execute();
-            header('Location: /public/views/player_dashboard.html');
+            if ($updateStmt->execute()) {
+                header('Location: /public/views/player_dashboard.html');
+                exit();
+            } else {
+                echo 'Error updating password.';
+            }
         } else {
             echo 'Current Password is incorrect';
         }

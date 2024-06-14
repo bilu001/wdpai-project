@@ -87,26 +87,20 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }
             });
 
-            const text = await response.text();
-            console.log('Response Text:', text); 
+            if (!response.ok) {
+                throw new Error('Error removing player');
+            }
 
-            const result = JSON.parse(text);
-
+            const result = await response.json();
             if (result.status === 'success') {
                 document.querySelector(`.player[data-player-id="${playerId}"]`).remove();
             } else {
                 throw new Error(result.message);
             }
         } catch (error) {
-            console.error('Error:', error);
-            alert('Error removing player: ' + error.message);
+            alert(error.message);
         }
     };
-    hamburgerMenu.addEventListener('click', () => {
-        navButtons.classList.toggle('active');
-    });
-    
-
 });
 
 function logout() {

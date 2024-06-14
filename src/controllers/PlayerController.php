@@ -24,34 +24,38 @@ class PlayerController {
         }
     }
 
-
-    ## STILL IN BUILDING PHASE BUT I DID NOT COMPLETE THIS FUNCTIONALITY!
     public function removePlayer($playerId) {
         $this->db->beginTransaction();
 
         try {
-            $injuriesQuery = 'DELETE FROM injuries WHERE player_id = :playerId';
-            $injuriesStmt = $this->db->prepare($injuriesQuery);
-            $injuriesStmt->bindParam(':playerId', $playerId);
-            $injuriesStmt->execute();
-
-            $playersQuery = 'DELETE FROM players WHERE player_id = :playerId';
-            $playersStmt = $this->db->prepare($playersQuery);
-            $playersStmt->bindParam(':playerId', $playerId);
-            $playersStmt->execute();
-            
             $usersQuery = 'DELETE FROM users WHERE player_id = :playerId';
             $usersStmt = $this->db->prepare($usersQuery);
             $usersStmt->bindParam(':playerId', $playerId);
             $usersStmt->execute();
 
+            $playersQuery = 'DELETE FROM players WHERE player_id = :playerId';
+            $playersStmt = $this->db->prepare($playersQuery);
+            $playersStmt->bindParam(':playerId', $playerId);
+            $playersStmt->execute();
+
+            $injuriesQuery = 'DELETE FROM injuries WHERE injury_id IS NULL';
+            $injuriesStmt = $this->db->prepare($injuriesQuery);
+            $injuriesStmt->execute();
+
+            $statisticsQuery = 'DELETE FROM statistics WHERE statistics_id IS NULL';
+            $statisticsStmt = $this->db->prepare($statisticsQuery);
+            $statisticsStmt->execute();
+
             $this->db->commit();
             return true;
         } catch (Exception $e) {
             $this->db->rollBack();
+            error_log('Error removing player: ' . $e->getMessage());
             return false;
         }
     }
+
+
 
     public function getPlayerData($username) {
         $query = 'SELECT players.*, statistics.*, injuries.type AS injury_status FROM players

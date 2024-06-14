@@ -6,9 +6,9 @@ It's a "team management" tool.
 ## Features
 
 - User roles: coach and player
-- Player and injury management
-- Statistics management
-- Authentication with encrypted passwords
+- Player management
+- Injury management
+- Authentication with password, password change
 - Session management with cookies
 - Dynamic data rendering based on user role
 
@@ -33,13 +33,7 @@ Once the containers are running, you can access the application at http://localh
 
 Login to pg-admin using credentials from docker-compose.yml file
 
-### Connecting to database
-
-It may happen that address of docker container on which database resides is different from what we have here.
-Please always run `docker container list` command, grasp an ID of container with DB.
-Then run `docker inspect <id>` command to get an IP Address. Once gathered, update Database.php controller with correct IP
-
-### Accessing the Application
+### Accessing the Application As Coach
 Once the containers are running, you can access the application at http://localhost:8080.
 
 Coach Login: Use the following credentials:
@@ -47,7 +41,23 @@ Email: <set_up_yours_in_db>
 Password: <set_up_yours_in_db>
 
 
-This `README.md` file provides a comprehensive overview of the project, including setup instructions, project structure, and additional resources. You can further customize it based on your project's specific needs and details.
+### Adding player
+Once logged in, from coach dashboard click on "Add a player", provide players image, name, surname and contract expiration date.
 
-***NOTE***
-REMOVE PLAYER FUNCTIONALITY IS STILL TBH, THUS THERE IS remove_player.php controller and function in PlayerController.php present for this functionality. However, they do not yet work.
+Uppon successful addition, you should see a player on your dashboard.
+
+### Access player page
+On another web browser access http://localhost:8080. Provide an email of the player ad namesurname@milano.com and password 'default'.
+
+You will ber redirected to change_password.html file where you will be asked to change the password.
+
+### Log injury as player
+As a player move to "Report injury" tab on your nav bar, fill in necessary info and click submit.
+
+Once you do this, on coach dashboard you will se an indicator that a player is injured ("!" mark next to "Remove player" button)
+
+### Removing a player
+As a coach by clicking "Remove player" you can remove a player from your team.
+
+
+This `README.md` file provides a comprehensive overview of the project, including setup instructions, project structure, and additional resources. You can further customize it based on your project's specific needs and details.
